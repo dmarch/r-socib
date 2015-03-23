@@ -14,13 +14,13 @@
 
 
 ## Load libraries and functions
-library( raster)
-source("../common/esriOcean.R") #r-cookbook/color/esriOcean.R
+library(raster)
+source("../common/esriOcean.R") #color palette from r-cookbook/color/esriOcean.R
 
 ## Locate and import a local NetCDF file (gridded typology)
 file <- "../data/MED_gebco.nc" # Opendap does not work in Windows, but you can download the netCDF from "http://thredds.socib.es/thredds/fileServer/ancillary_data/bathymetry/MED_gebco.nc"
 data <- raster(file) # that's it! you have your gebco in raster format
-summary(data)
+data # inspect raster properties
 plot(data)
 
 ## create hillshae with terrain analysis
